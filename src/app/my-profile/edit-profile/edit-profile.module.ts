@@ -16,7 +16,7 @@ const routes: Routes = [
   declarations: [EditProfileComponent],
   imports: [
     NativeScriptCommonModule,
-    NativeScriptRouterModule.forRoot(routes)
+    NativeScriptRouterModule.forChild(routes)
   ],
   exports: [
     NativeScriptRouterModule

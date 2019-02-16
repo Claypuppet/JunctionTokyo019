@@ -18,7 +18,7 @@ const routes: Routes = [
   ],
   imports: [
     NativeScriptCommonModule,
-    NativeScriptRouterModule.forRoot(routes)
+    NativeScriptRouterModule.forChild(routes)
   ],
   exports: [
     NativeScriptRouterModule
