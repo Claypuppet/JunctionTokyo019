@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {SwipeGestureEventData} from "tns-core-modules/ui/gestures";
+import {RouterExtensions} from "nativescript-angular/router";
 
 @Component({
   selector: 'ns-welcome-what',
@@ -8,10 +10,18 @@ import {Component, OnInit} from '@angular/core';
 })
 export class WelcomeWhatComponent implements OnInit {
 
-  constructor() {
+  constructor(private router: RouterExtensions) {
+    console.log('what');
   }
 
   ngOnInit() {
+  }
+
+  onSwipe(args: SwipeGestureEventData) {
+
+    if (args.direction === 2) { // Right
+      this.router.navigate(['/welcome/how'])
+    }
   }
 
 }

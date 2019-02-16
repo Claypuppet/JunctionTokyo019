@@ -8,7 +8,7 @@ import {NativeScriptRouterModule} from "nativescript-angular/router";
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "/what",
+    redirectTo: "what",
     pathMatch: "full"
   },
   {

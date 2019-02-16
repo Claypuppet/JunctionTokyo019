@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: "",
     pathMatch: "full",
-    redirectTo: "/welcome",
+    redirectTo: "welcome",
   },
   {
     path: "scan-result",
