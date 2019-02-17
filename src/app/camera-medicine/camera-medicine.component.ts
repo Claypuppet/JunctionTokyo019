@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ImageApiService} from "~/core/services/ImageApi.service";
 import * as camera from "nativescript-camera";
+import {RouterExtensions} from 'nativescript-angular/router';
 
 @Component({
   selector: 'ns-camera-medicine',
@@ -10,24 +11,39 @@ import * as camera from "nativescript-camera";
 })
 export class CameraMedicineComponent implements OnInit {
 
-  constructor(private imageApiService: ImageApiService) {
+  constructor(private router: RouterExtensions, private imageApiService: ImageApiService) {
   }
 
   ngOnInit() {
+  }
+
+  takePicture(event) : void {
     // Init your component properties here.
     camera.requestPermissions().then(
-      function success() {
+      () => {
         const that = this;
-        camera.takePicture().then(image => {
-          that.imageApiService.sendImage(image.nativeImage);
+        camera.takePicture().then(image1 => {
+          console.log("OK first!");
+
+          camera.takePicture().then(image2 => {
+            console.log("OK! second");
+            that.imageApiService.sendImage(image1.nativeImage, image2.nativeImage).subscribe(
+              () => {
+                console.log("Yay!");
+              },
+              (e) => {
+                console.log("Nay...", e);
+              }
+            );
+
+          });
 
         });
       },
-      function failure() {
+      () => {
         // permission request rejected
         // ... tell the user ...
       }
     );
   }
-
 }

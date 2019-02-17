@@ -1,1 +1,26 @@
-<Button text="scan-result works!" class="btn btn-primary"></Button>
+<ActionBar title="Medicine" class="action-bar">
+</ActionBar>
+<GridLayout>
+  <ScrollView class="page">
+    <StackLayout class="home-panel">
+      <TextView editable="false" textAlignment="center" fontSize="40dp">
+        <FormattedString>
+          <Span text="NUROFEN" fontWeight="Bold"></Span>
+        </FormattedString>
+      </TextView>
+      <Image src="https://play.nativescript.org/dist/assets/img/NativeScript_logo.png"
+             width="50%" marginTop="20dp" marginBottom="20dp"></Image>
+      <TextView editable="false" fontSize="20dp" width="70%" textAlignment="center">
+        <FormattedString>
+          <Span text="The medicine contains shrimp component."></Span>
+        </FormattedString>
+      </TextView>
+      <TextView editable="false" color="red" fontWeight="bold" fontSize="30dp" textAlignment="center" width="60%">
+        <FormattedString>
+          <Span text="You must not drink it"></Span>
+        </FormattedString>
+      </TextView>
+
+    </StackLayout>
+  </ScrollView>
+</GridLayout>

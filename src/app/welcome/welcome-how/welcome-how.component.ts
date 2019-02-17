@@ -20,8 +20,16 @@ export class WelcomeHowComponent implements OnInit {
   onSwipe(args: SwipeGestureEventData) {
 
     if (args.direction === 1) { // Left
-      this.router.navigate(['/welcome/what'])
+      this.router.navigate(['/welcome/what'], {transition: {name: "slideRight"}, clearHistory: true})
     }
+
+    if (args.direction === 2) { // Right
+      this.next();
+    }
+  }
+
+  next() {
+    this.router.navigate(['/welcome/setup'], {transition: {name: "slideLeft"}, clearHistory: true})
   }
 
 }

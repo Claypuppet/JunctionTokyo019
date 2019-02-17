@@ -1,3 +1,30 @@
-<Button text="my-profile works!" class="btn btn-primary"></Button>
+<ActionBar class="action-bar">
+  <NavigationButton text="Edit" navigationTransition="slideRight"
+                    [nsRouterLink]="['/my-profile/edit']"></NavigationButton>
+  <Label class="action-bar-title" text="My profile"></Label>
+</ActionBar>
 
-<Button text="TAKE PICTURE!!!!" [nsRouterLink]="['/camera-medicine']"></Button>
+
+<StackLayout orientation="vertical" width="100%" height="40%"
+             backgroundColor="#CAE9F5">
+  <Image src="https://play.nativescript.org/dist/assets/img/NativeScript_logo.png"
+         height="55%" marginBottom="20dp" marginTop="20dp"
+         borderRadius="100dp"></Image>
+  <TextView editable="false" backgroundColor="#CAE9F5"
+            textAlignment="center" fontSize="30dp">
+    <FormattedString>
+      <Span text="Yellow Yamamoto"></Span>
+
+    </FormattedString>
+  </TextView>
+
+</StackLayout>
+<TextView editable="false">
+  <FormattedString>
+    <Span text="This is a text view that uses attributed text. You can use text attributes such as "></Span>
+    <Span text="bold, " fontWeight="Bold"></Span>
+    <Span text="italic " fontStyle="Italic"></Span>
+    <Span text="and "></Span>
+    <Span text="underline." textDecoration="Underline"></Span>
+  </FormattedString>
+</TextView>

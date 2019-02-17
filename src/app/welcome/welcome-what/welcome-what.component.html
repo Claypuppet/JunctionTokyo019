@@ -1,3 +1,20 @@
-<GridLayout (swipe)="onSwipe($event)" class="bg-primary p-15 m-15" width="auto" height="auto">
+<ActionBar class="action-bar welcome">
+  <Label class="action-bar-title" text="Welcome"></Label>
+</ActionBar>
 
+<GridLayout (swipe)="onSwipe($event)" class="bg-primary p-15 m-15" width="auto" height="auto">
+  <ScrollView class="page blue">
+    <StackLayout class="home-panel">
+      <!--Add your page content here-->
+      <Image src = "~/assets/img/how.png"></Image>
+      <Label textWrap="true" text="What is MedEasy" class="h1 welcome-title"></Label>
+
+      <Label textWrap="true" text="MedEasy makes reading prescription easier"
+             class="h2 welcome-description"></Label>
+
+
+      <Button text="Swipe Next" (tap)="next()"></Button>
+
+    </StackLayout>
+  </ScrollView>
 </GridLayout>

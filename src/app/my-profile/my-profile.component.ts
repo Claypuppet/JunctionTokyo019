@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {SwipeGestureEventData} from 'tns-core-modules/ui/gestures/gestures';
+import {RouterExtensions} from 'nativescript-angular/router';
 
 @Component({
   selector: 'ns-my-profile',
@@ -8,10 +10,16 @@ import {Component, OnInit} from '@angular/core';
 })
 export class MyProfileComponent implements OnInit {
 
-  constructor() {
+  constructor(private router: RouterExtensions) {
   }
 
   ngOnInit() {
   }
 
+  onSwipe(args: SwipeGestureEventData) {
+
+    if (args.direction === 2) { // Right, to my schedule
+      this.router.navigate(['/my-schedule'], {transition: {name: "slideLeft"}, clearHistory: true})
+    }
+  }
 }

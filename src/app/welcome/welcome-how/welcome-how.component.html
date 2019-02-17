@@ -1,3 +1,24 @@
+<ActionBar class="action-bar welcome">
+  <Label class="action-bar-title" text="Welcome"></Label>
+</ActionBar>
+
 <GridLayout (swipe)="onSwipe($event)" class="bg-primary p-15 m-15" width="auto" height="auto">
 
+  <StackLayout class="home-panel">
+    <!--Add your page content here-->
+    <Image src="~/assets/img/how.png"></Image>
+    <Label textWrap="true" text="How does it works" class="h1 welcome-title"></Label>
+
+    <Label textWrap="true" text="1) Take photo of the medicine label"
+           class="h2 welcome-description"></Label>
+
+    <Label textWrap="true" text="2) Get intuitive icon"
+           class="h2 welcome-description"></Label>
+
+
+    <Label textWrap="true" text="Get Started" class="h1 welcome-title button"></Label>
+
+    <Button text="Next" (tap)="next()"></Button>
+
+  </StackLayout>
 </GridLayout>

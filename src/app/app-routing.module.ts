@@ -29,6 +29,10 @@ const routes: Routes = [
     loadChildren: "./scan-medicine/scan-medicine.module#ScanMedicineModule"
   },
   {
+    path: "medicine-list",
+    loadChildren: "./medicine-list/medicine-list.module#MedicineListModule"
+  },
+  {
     path: "welcome",
     loadChildren: "./welcome/welcome.module#WelcomeModule"
   },

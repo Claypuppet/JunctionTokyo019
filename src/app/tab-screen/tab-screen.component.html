@@ -1,0 +1,36 @@
+<ActionBar title="Medicine" class="action-bar">
+</ActionBar>
+<GridLayout>
+  <TabView androidTabsPosition="bottom">
+
+    <page-router-outlet
+        *tabItem="{title: 'Profile'}"
+        name="profileTab">
+    </page-router-outlet>
+
+    <page-router-outlet
+        *tabItem="{title: 'Browse', iconSource: getIconSource('browse')}"
+        name="browseTab">
+    </page-router-outlet>
+
+    <page-router-outlet
+        *tabItem="{title: 'Search', iconSource: getIconSource('search')}"
+        name="searchTab">
+    </page-router-outlet>
+
+  </TabView>
+  <TabView height="300px">
+    <StackLayout *tabItem="{title: 'Profile'}">
+      <ns-my-profile></ns-my-profile>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Schedule'}">
+      <ns-my-schedule></ns-my-schedule>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Medicine'}">
+      <ns-medicine-list></ns-medicine-list>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Take Photo'}">
+      <ns-camera-medicine></ns-camera-medicine>
+    </StackLayout>
+  </TabView>
+</GridLayout>

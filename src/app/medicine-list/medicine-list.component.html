@@ -1,0 +1,16 @@
+<ActionBar class="action-bar">
+  <Label class="action-bar-title" text="Medicine list"></Label>
+</ActionBar>
+
+<GridLayout (swipe)="onSwipe($event)">
+  <StackLayout class="home-panel">
+    <SearchBar hint="Search medicine" (textChange)="onTextChanged($event)" (submit)="onSubmit($event)"></SearchBar>
+    <ListView class="list-group" [items]="suggestions" (itemTap)="onItemTap($event)" style="height:1250px">
+      <ng-template let-item="item">
+        <FlexboxLayout flexDirection="row" class="list-group-item">
+          <Label [text]="item" class="list-group-item-heading" verticalAlignment="center"></Label>
+        </FlexboxLayout>
+      </ng-template>
+    </ListView>
+  </StackLayout>
+</GridLayout>

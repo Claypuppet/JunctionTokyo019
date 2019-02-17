@@ -1,0 +1,22 @@
+<ActionBar class="action-bar">
+  <Label class="action-bar-title" text="My Schedule"></Label>
+</ActionBar>
+
+<TextView editable="false" textAlignment="center" fontSize="40dp">
+  <FormattedString>
+    <Span text="Set Time for Nurofen" fontWeight="Bold"></Span>
+  </FormattedString>
+</TextView>
+<TimePicker [hour]="currentHour" [minute]="currentMinute"
+            verticalAlignment="center"></TimePicker>
+<StackLayout orientation="horizontal" horizontalAlignment="center" marginBottom="20dp">
+  <TextView editable="false" fontSize="20dp">
+    <FormattedString>
+      <Span text="Alarm Notification"></Span>
+    </FormattedString>
+  </TextView>
+  <Switch checked="true"></Switch>
+</StackLayout>
+<Button text="Add to Schedule" (tap)="onButtonTap()"
+        backgroundColor="blue" paddingTop="20dp" paddingBottom="20dp"
+        width="50%" borderRadius="30dp" color="white"></Button>

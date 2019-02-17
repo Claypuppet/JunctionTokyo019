@@ -19,6 +19,10 @@ const routes: Routes = [
     path: "how",
     loadChildren: "./welcome-how/welcome-how.module#WelcomeHowModule"
   },
+  {
+    path: "setup",
+    loadChildren: "./welcome-setup-profile/welcome-setup-profile.module#WelcomeSetupProfileModule"
+  },
 ];
 
 @NgModule({
